@@ -15,7 +15,7 @@ A simple web application that fetches and displays GitHub user information.
 
 1. Clone the repository
 ```bash
-git clone https://github.com/code-with-alpha/Github-User-Info-Fetcher.git
+git clone https://github.com/code-with-alpha/Github-User-Info-Fetcher_Modified.git
 ```
 2. Navigate to the project directory
 ```bash
