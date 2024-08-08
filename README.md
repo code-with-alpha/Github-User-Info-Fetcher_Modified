@@ -27,6 +27,8 @@ cd Github-User-Info-Fetcher
 ### Preview
 - Project Showcase (Linkedin Post Link): https://www.linkedin.com/posts/krrishkumar_githubuserinfofetcher-webdevelopment-javascript-activity-7227228521452998656-ONFV?utm_source=share&utm_medium=member_desktop
 
+<img src="image.png" />
+
 ## Socials
 - Subcribe to the Youtube Channel: https://youtube.com/@codewithalphadotcom
 - Linkedin Profile: https://linkedin.com/in/krrishkumar
