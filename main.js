@@ -25,6 +25,7 @@ const main = async (githubUsername) => {
         showFollowers(githubData);
         showFollowing(githubData);
         showRepositories(githubData);
+        showAccountCreationDate(githubData);
 
         if (githubData.bio) {
             let div = document.createElement('div');
@@ -56,7 +57,7 @@ const main = async (githubUsername) => {
             blog.textContent = githubData.blog;
         }
 
-        await gitData(githubUsername);
+        await reposData(githubUsername);
     } catch (error) {
         console.error(error);
     }
@@ -92,6 +93,30 @@ const showRepositories = (githubData) => {
     repos.textContent = githubData.public_repos;
 }
 
+const showAccountCreationDate = (githubData) => {
+    const creationDate = document.querySelector('.creation-date');
+    const acd = new Date(githubData.created_at); // acd -> account creation date
+
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    const formattedDate = `${months[acd.getMonth()]
+        } ${acd.getDate()}, ${acd.getFullYear()}`;
+    creationDate.textContent = formattedDate;
+}
+
 const getGithubData = async (githubUsername) => {
     try {
         const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
@@ -105,7 +130,7 @@ const getGithubData = async (githubUsername) => {
     }
 }
 
-const gitData = async (githubUsername) => {
+const reposData = async (githubUsername) => {
     try {
         const reposData = await getGithubData(githubUsername);
         const allGitRepos = document.querySelector('.all-repos');
